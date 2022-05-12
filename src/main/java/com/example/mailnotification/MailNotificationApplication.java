@@ -1,7 +1,6 @@
 package com.example.mailnotification;
 
 import com.example.mailnotification.model.PaymentDTO;
-import com.example.mailnotification.service.mail.EmailSenderService;
 import com.example.mailnotification.service.message.ConsumerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -22,9 +21,7 @@ public class MailNotificationApplication {
 
     @EventListener(ApplicationReadyEvent.class)
     public void sendMail() {
-        PaymentDTO paymentDTO = new PaymentDTO();
-        emailSenderService.sendEmail("tamirlansemsk@gmail.com", "Successfully paid",
-                "Thank you for paying ");
+        PaymentDTO paymentDTO=new PaymentDTO();
 
     }
 }
